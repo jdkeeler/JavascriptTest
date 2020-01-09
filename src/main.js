@@ -13,9 +13,9 @@ module.exports.run = function() {
     console.log(twoSum());
 
 
-    //OUTPUT THE NUMBERS
-    console.log("\n\n-----QUESTION_COLLECTIONS-----\n\n");
-    console.log(collections());
+    //OUTPUT THE PROVIDERS
+    console.log("\n\n-----QUESTION_CHAINS-----\n\n");
+    console.log(findChains());
 }
 
 //Instructions:
@@ -44,11 +44,19 @@ function twoSum(inputArray = [1, 5, 2, 0, 4, 11, 9, 6, 12, 7], targetValue = 9) 
 }
 
 //Instructions:
-//  Generate 100 random numbers in the range of [1 - 1000], inclusive.
-//  Put all of the numbers into key/value collection with a starting key of 1
-//  Then put the numbers into an array
-//  Sort the numbers and then return them as a single string with one number on every line
-function collections() {
+//  The NPI registry has an open API to find healthcare provider organizations.
+//  https://npiregistry.cms.hhs.gov/registry/help-api
+//
+//  Given a zip code, get the first 10 providers for that zip code, and determine if any of those
+//  providers are have multiple locations by searching the NPI registry with the organization
+//  name. Return a comma delimited string of provider names that result in multiple locations.
+//
+//  Get up to 10 organizational providers by zip code:
+//  https://npiregistry.cms.hhs.gov/api/?version=2.1&postal_code=97005&enumeration_type=NPI-2
+//
+//  Get up to 10 providers by organization name:
+//  https://npiregistry.cms.hhs.gov/api/?version=2.1&enumeration_type=NPI-2&organization_name=THERAPEUTIC%20ASSOCIATES%20INC
+function findChains(zipCode = "97005") {
 
     //YOUR CODE HERE
 
